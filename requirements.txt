@@ -7,7 +7,7 @@
 
 # Change default sound card to https://superuser.com/a/630048  --- doesn't work
 pydub==0.25.1
-#pyaudio
+pyaudio
 
 # Jukebox Core
 # For USB inputs (reader, buttons) and bluetooth buttons
