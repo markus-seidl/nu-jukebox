@@ -32,6 +32,7 @@ CARD_DICTIONARY = {
     "438CDD15": {"file": ALBUM_SONNTAG_VOL_2 + "/48 Die Finger wollen tanzen.wav"},
     "F324C815": {"file": ALBUM_SONNTAG_VOL_2 + "/27 Auf den Schultern von meinem Dad.wav"},
     "635E1316": {"random_song": ALBUM_SONNTAG_VOL_2},
+    "13D7BA17": {"random_song": ALBUM_DIE_30_TEIL_1},
     "42D75C3D": {"volume_up": 5},
     "42DC5C3D": {"volume_down": 5}
 }
