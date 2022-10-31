@@ -18,4 +18,14 @@
 * `apt update && apt install python3 ffmpeg python3-pip build-essential python3-dev libasound2-dev portaudio19-dev python3-pyaudio -y`
 * Upload the files under `/root/nu-jukebox/`
 * `pip3 install -r requirements.txt`
-* 
+```
+SYSTEMD_PATH="/lib/systemd/system/"
+cd nu-jukebox/doc/dietpi
+
+cp -f "nu-jukebox-daemon.service" "${SYSTEMD_PATH}"
+chmod 644 "${SYSTEMD_PATH}/nu-jukebox-daemon.service"
+
+systemctl daemon-reload
+systemctl enable nu-jukebox-daemon
+```
+
