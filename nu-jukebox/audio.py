@@ -65,7 +65,7 @@ class AudioManager:
                 pyaudio_idx = i
                 break
 
-        if pyaudio_idx <= 0 or alsa_card_idx <= 0:
+        if pyaudio_idx < 0 or alsa_card_idx < 0:
             raise OSError(f"Unable to find pyaudio or alsa card {alsa_card_idx}:{pyaudio_idx}")
 
         print(f"Found ids: {alsa_card_idx}:{pyaudio_idx}")

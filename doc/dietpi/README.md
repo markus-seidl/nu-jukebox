@@ -15,7 +15,7 @@
 
 ## Jukebox
 
-* `apt update && apt install python3 ffmpeg python3-pip build-essential python3-dev libasound2-dev -y`
+* `apt update && apt install python3 ffmpeg python3-pip build-essential python3-dev libasound2-dev portaudio19-dev python3-pyaudio -y`
 * Upload the files under `/root/nu-jukebox/`
 * `pip3 install -r requirements.txt`
 * 
