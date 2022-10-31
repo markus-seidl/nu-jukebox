@@ -4,7 +4,7 @@ import audio
 import os
 from nfc.rc522 import RC522Manager
 
-AUDIO_ROOT = "/home/pi/audio"
+AUDIO_ROOT = "/root/audio"
 ALBUM_DIE_30_TEIL_1 = AUDIO_ROOT + "/Die_30_schoensten_Kinderlieder_Teil_1/"
 ALBUM_SONNTAG_VOL_2 = AUDIO_ROOT + "/Die_60_Besten_Kinderlieder_Vol_2/"
 ANIMALS_ROOT = AUDIO_ROOT + "/animals/"
