@@ -123,7 +123,7 @@ def handle_card_file(card, audio_manager, uid):
 def main():
     audio_manager = audio.AudioManager.from_card_name(ALSA_CARD_NAME, ALSA_MIXER_NAME)
 
-    audio_manager.set_volume(30)
+    audio_manager.set_volume(50)
 
     while True:
         snd = random.Random().randint(0, len(STARTUP_SOUND) - 1)
