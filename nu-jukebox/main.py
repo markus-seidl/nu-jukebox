@@ -1,4 +1,5 @@
 import random
+import sys
 import time
 import audio
 import os
@@ -43,25 +44,28 @@ STARTUP_SOUND = [
     ANIMALS_ROOT + "cow.wav", ANIMALS_ROOT + "dog.wav", ANIMALS_ROOT + "rooster.wav", ANIMALS_ROOT + "sheep.wav",
     ANIMALS_ROOT + "frogs.wav", ANIMALS_ROOT + "cockatoo.wav"
 ]
-VOLUME_UP_SOUND = "/home/pi/audio/volume_up.wav"
-VOLUME_DOWN_SOUND = "/home/pi/audio/volume_down.wav"
+VOLUME_UP_SOUND = "/root/audio/volume_up.wav"
+VOLUME_DOWN_SOUND = "/root/audio/volume_down.wav"
 
 
 def card_found_callback(audio_manager: audio.AudioManager, uid, card_on_reader):
-    if not card_on_reader:
-        audio_manager.stop()
-    elif uid in CARD_DICTIONARY:
-        card = CARD_DICTIONARY[uid]
-        if "file" in card and card_on_reader:
-            handle_card_file(card, audio_manager, uid)
-        elif "volume_up" in card and card_on_reader:
-            handle_card_volume_up(card, audio_manager, uid)
-        elif "volume_down" in card and card_on_reader:
-            handle_card_volume_down(card, audio_manager, uid)
-        elif "random_song" in card and card_on_reader:
-            handle_card_random_song(card, audio_manager, uid)
-    else:
-        print(f"Card not found: {uid}")
+    try:
+        if not card_on_reader:
+            audio_manager.stop()
+        elif uid in CARD_DICTIONARY:
+            card = CARD_DICTIONARY[uid]
+            if "file" in card and card_on_reader:
+                handle_card_file(card, audio_manager, uid)
+            elif "volume_up" in card and card_on_reader:
+                handle_card_volume_up(card, audio_manager, uid)
+            elif "volume_down" in card and card_on_reader:
+                handle_card_volume_down(card, audio_manager, uid)
+            elif "random_song" in card and card_on_reader:
+                handle_card_random_song(card, audio_manager, uid)
+        else:
+            print(f"Card not found: {uid}")
+    except:
+        print("Internal Error: ", sys.last_value, sys.last_traceback)
 
 
 def handle_card_volume_up(card, audio_manager: audio.AudioManager, uid):
